@@ -1,0 +1,5 @@
+config:
+  log_level: error
+  app:
+    id: 9999
+    DEFAULT_DRM_ID: 6
