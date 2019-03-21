@@ -173,15 +173,15 @@ func authorize(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	media, err := FetchMedia(contentID, contentManagerEndpoint)
+	media, err := fetchMedia(contentID, contentManagerEndpoint)
 	if err != nil {
-		WriteError(w, 0, http.StatusText(http.StatusInternalServerError))
+		writeError(w, 0, http.StatusText(http.StatusInternalServerError))
 		return
 	}
 
-	filteredEncodings := Filter(media.Encodings, validEncoding)
+	filteredEncodings := filter(media.Encodings, validEncoding)
 	if len(filteredEncodings) == 0 {
-		WriteError(w, 306, "No matching encodings found")
+		writeError(w, 306, "No matching encodings found")
 		return
 	}
 

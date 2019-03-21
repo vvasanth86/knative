@@ -3,7 +3,6 @@ kind: Service
 metadata:
   name: cms
   namespace: default
-  labels: serving.knative.dev/visibility=cluster-local
 spec:
   runLatest:
     configuration:
